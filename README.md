@@ -65,3 +65,8 @@ wrangler publish -c .secrets/wrangler.toml
 
 ## Using this as a template
 
+You *would* be able to do this
+```
+wrangler generate project_name https://github.com/backchannelinc/GreyNoise-Cloudflare-Worker
+```
+However this command looks for the `master` branch rather than the `main` branch. [Go bother the `wrangler` devs](https://github.com/cloudflare/wrangler/issues/1704) if this annoys you too.
