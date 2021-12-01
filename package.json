@@ -1,0 +1,13 @@
+{
+  "private": false,
+  "name": "greynoise-cloudflare-worker",
+  "version": "1.0.0",
+  "description": "Serverless webservice that filters traffic through GreyNoise",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "@aaronsdevera",
+  "license": "MIT License. Copyright Backchannel Inc",
+  "devDependencies": {
+  }
+}

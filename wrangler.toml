@@ -1,0 +1,14 @@
+name = "greynoise-cloudflare-worker"
+type = "javascript"
+
+compatibility_date = "2021-12-03"
+
+account_id = "<you cloudflare account ID>"
+workers_dev = true
+route = "*yourdomain.com/*"
+zone_id = "<zone ID for the above domain in cloudflare dashboard>"
+
+[vars]
+GREYNOISE_API_KEY = "value1"
+
+kv_namespaces = []
