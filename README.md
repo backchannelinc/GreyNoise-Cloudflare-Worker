@@ -28,7 +28,7 @@ The benchmarks are OK. For regular humans browing the web, its almost negligble.
 
 | Test Case | Speed | Client Location | Performance Grade | Link |
 | --- | --- | --- | --- | --- |
-Without enrichment API lookup | 57 ms | San Francisco | 🟢 A | pingdom test](https://tools.pingdom.com/#5f5e0c1641800000)
+Without enrichment API lookup | 57 ms | San Francisco | 🟢 A | [pingdom test](https://tools.pingdom.com/#5f5e0c1641800000)
 With enrichment API lookup | 383 ms | San Francisco | 🟢 A | [pingdom test](https://tools.pingdom.com/#5f5e0b74cdc00000)
 Without enrichment API lookup | 76 ms | San Francisco | N/A | [URLscan](https://urlscan.io/result/9df56034-f4a7-40f1-95a8-79579741b6d1/#transactions)
 With enrichment API lookup | 444 ms | Frankfurt | N/A | [URLscan](https://urlscan.io/result/8cd98868-e608-432f-bf3d-ada058bf204f/#transactions)
