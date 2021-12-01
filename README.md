@@ -62,3 +62,6 @@ though if you sourced your `wrangler.toml` in a directory like `.secrets`, you w
 ```
 wrangler publish -c .secrets/wrangler.toml
 ```
+
+## Using this as a template
+
