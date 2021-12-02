@@ -38,8 +38,13 @@ async function normalResponse(){
     return new Response("Hello normal, nice human!")
 }
 
+async function returnData(object){
+    return new Response(JSON.stringify(object,null,4),{headers:{'content-type':'application/json'}})
+}
+
 
 async function handleRequest(request) {
+    
 
     // UNCOMMENT THE LINE BELOW TO BYPASS GREYNOISE
     // return normalResponse()
@@ -50,6 +55,18 @@ async function handleRequest(request) {
 
     // get the GreyNoise enrichment for this IP
     const greynoiseResponse = await getGreynoise(clientIP)
+
+    // get client URL request
+    const url = new URL(request.url)
+    uri = url.pathname
+
+    // if the client is hitting the /info endpoint, just return the json
+    if (uri === '/info') {
+        const ts = Date.now()
+        const cloudflare_data = request.cf
+        const request_headers = Object.fromEntries(request.headers)
+        return returnData({ts,clientIP,greynoiseResponse,request_headers,cloudflare_data})
+    }
 
     // get GreyNoise classification
     // this may be null or undefined, but thats ok, we fail open ;)
