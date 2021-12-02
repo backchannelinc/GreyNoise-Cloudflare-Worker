@@ -70,7 +70,7 @@ async function normalResponse(){
 async function handleRequest(request) {
 
     // UNCOMMENT THE LINE BELOW TO BYPASS GREYNOISE
-    return normalResponse()
+    // return normalResponse()
     // this is for testing the speed of the worker
     
     // Get the client IP for the incoming request
