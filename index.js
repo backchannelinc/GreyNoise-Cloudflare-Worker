@@ -14,11 +14,7 @@ async function getGreynoise(ip) {
     // instead we will get an envrionment var
     const GREYNOISE_TOKEN = GREYNOISE_API_KEY
     const GN_COMMUNITY_URL = 'https://api.greynoise.io/v3/community/'
-    const GN_CONTEXT_URL = 'https://api.greynoise.io/v2/noise/context/'
-    const GN_RIOT_URL = 'https://api.greynoise.io/v2/riot/'
-    
-    var returnData
-  
+
     const data = await fetch(`${GN_COMMUNITY_URL}${ip}`, {
         headers: {
             'Accept': 'application/json',
@@ -26,31 +22,7 @@ async function getGreynoise(ip) {
         }
     })
     const COMMUNITY_RESPONSE = data.json()
-    if (COMMUNITY_RESPONSE.noise === true) {
-      const contextData = await fetch(`${GN_CONTEXT_URL}${ip}`, {
-          headers: {
-              'Accept': 'application/json',
-              'key': GREYNOISE_TOKEN
-          }
-      })
-      const CONTEXT_RESPONSE = contextData.json()
-      returnData = CONTEXT_RESPONSE
-    } else {
-      returnData = COMMUNITY_RESPONSE
-    }
-    if (COMMUNITY_RESPONSE.riot === true) {
-      const riotData = await fetch(`${GN_RIOT_URL}${ip}`, {
-          headers: {
-              'Accept': 'application/json',
-              'key': GREYNOISE_TOKEN
-          }
-      })
-      const RIOT_RESPONSE = riotData.json()
-      returnData = RIOT_RESPONSE
-    } else {
-      returnData = COMMUNITY_RESPONSE
-    }
-    return returnData
+    return COMMUNITY_RESPONSE
 }
 
 async function maliciousResponse(){
@@ -70,7 +42,7 @@ async function normalResponse(){
 async function handleRequest(request) {
 
     // UNCOMMENT THE LINE BELOW TO BYPASS GREYNOISE
-    return normalResponse()
+    // return normalResponse()
     // this is for testing the speed of the worker
     
     // Get the client IP for the incoming request
